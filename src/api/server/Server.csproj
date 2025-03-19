@@ -9,6 +9,7 @@
     <PublishProfile>DefaultContainer</PublishProfile>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Aspire.Microsoft.Data.SqlClient" />
     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
       <PrivateAssets>all</PrivateAssets>
@@ -20,8 +21,12 @@
     <ProjectReference Include="..\framework\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\migrations\MSSQL\MSSQL.csproj" />
     <ProjectReference Include="..\migrations\PostgreSQL\PostgreSQL.csproj" />
+    <ProjectReference Include="..\modules\Catalog\Catalog.Application\Catalog.Application.csproj" />
     <ProjectReference Include="..\modules\Catalog\Catalog.Infrastructure\Catalog.Infrastructure.csproj" />
     <ProjectReference Include="..\modules\Todo\Todo.csproj" />
+    <ProjectReference Include="..\modules\Watch\Watch.Application\Watch.Application.csproj" />
+    <ProjectReference Include="..\modules\Watch\Watch.Domain\Watch.Domain.csproj" />
+    <ProjectReference Include="..\modules\Watch\Watch.Infrastructure\Watch.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="appsettings.Development.json">

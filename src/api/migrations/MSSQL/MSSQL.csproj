@@ -7,6 +7,9 @@
     <ProjectReference Include="..\..\framework\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\..\modules\Catalog\Catalog.Infrastructure\Catalog.Infrastructure.csproj" />
     <ProjectReference Include="..\..\modules\Todo\Todo.csproj" />
+    <ProjectReference Include="..\..\modules\Watch\Watch.Application\Watch.Application.csproj" />
+    <ProjectReference Include="..\..\modules\Watch\Watch.Domain\Watch.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Watch\Watch.Infrastructure\Watch.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Catalog\" />

@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>FSH.Starter.WebApi.Watch.Application</RootNamespace>
+    <AssemblyName>FSH.Starter.WebApi.Watch.Application</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\Core\Core.csproj" />
+    <ProjectReference Include="..\Watch.Domain\Watch.Domain.csproj" />
+  </ItemGroup>
+</Project>

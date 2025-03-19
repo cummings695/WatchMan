@@ -5,6 +5,8 @@ using FluentValidation;
 using FSH.Starter.WebApi.Catalog.Application;
 using FSH.Starter.WebApi.Catalog.Infrastructure;
 using FSH.Starter.WebApi.Todo;
+using FSH.Starter.WebApi.Watches.Application;
+using FSH.Starter.WebApi.Watches.Infrastructure;
 
 namespace FSH.Starter.WebApi.Host;
 
@@ -18,6 +20,7 @@ public static class Extensions
         var assemblies = new Assembly[]
         {
             typeof(CatalogMetadata).Assembly,
+            typeof(WatchMetadata).Assembly,
             typeof(TodoModule).Assembly
         };
 
@@ -32,12 +35,14 @@ public static class Extensions
 
         //register module services
         builder.RegisterCatalogServices();
+        builder.RegisterWatchServices();
         builder.RegisterTodoServices();
 
         //add carter endpoint modules
         builder.Services.AddCarter(configurator: config =>
         {
             config.WithModule<CatalogModule.Endpoints>();
+            config.WithModule<WatchModule.Endpoints>();
             config.WithModule<TodoModule.Endpoints>();
         });
 
@@ -50,6 +55,7 @@ public static class Extensions
 
         //register modules
         app.UseCatalogModule();
+        app.UseWatchModule();
         app.UseTodoModule();
 
         //register api versions

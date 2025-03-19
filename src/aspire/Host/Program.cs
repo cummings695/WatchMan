@@ -16,7 +16,13 @@ var database = builder.AddPostgres("db", username, password, port: 5432)
     .WithDataVolume()
     .AddDatabase("fullstackhero");
 
+// var sql = builder.AddSqlServer("sql")
+//     .WithLifetime(ContainerLifetime.Persistent);
+//
+// var database = sql.AddDatabase("watchman");
+
 var api = builder.AddProject<Projects.Server>("webapi")
+    .WithReference(database)
     .WaitFor(database);
 
 var blazor = builder.AddProject<Projects.Client>("blazor");
